@@ -1,10 +1,13 @@
 [gd_scene format=3 uid="uid://cil08k2w5rsdj"]
 
+[ext_resource type="Script" uid="uid://d18237qhpixy2" path="res://entities/character/character.gd" id="1_gpmbr"]
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_q45a2"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_gpmbr"]
 
 [node name="CharacterBody2D" type="CharacterBody2D" unique_id=416686133]
+script = ExtResource("1_gpmbr")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=836094252]
 shape = SubResource("RectangleShape2D_q45a2")
