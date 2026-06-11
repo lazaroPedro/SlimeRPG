@@ -1,6 +1,11 @@
-extends Node2D
-var 
-signal update_turn(actual_status)
+extends Resource
+class_name CharacterModel
+
+enum TurnState {}
+var name
+
+
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass # Replace with function body.
