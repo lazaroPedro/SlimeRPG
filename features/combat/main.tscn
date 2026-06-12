@@ -1,0 +1,41 @@
+[gd_scene format=3 uid="uid://d1r0f3blgicbx"]
+
+[ext_resource type="Script" uid="uid://dig4lb8goc8ft" path="res://features/combat/main.gd" id="1_owsrs"]
+[ext_resource type="PackedScene" uid="uid://cshknhluxep40" path="res://entities/player/player.tscn" id="2_tkm3n"]
+[ext_resource type="PackedScene" uid="uid://cil08k2w5rsdj" path="res://entities/player/player_button.tscn" id="3_755g7"]
+[ext_resource type="PackedScene" uid="uid://b0kfmy27wgpla" path="res://entities/enemy/enemy.tscn" id="4_5mqmg"]
+
+[node name="Node2D" type="Node2D" unique_id=796590410]
+script = ExtResource("1_owsrs")
+
+[node name="Button" type="Button" parent="." unique_id=2065878339]
+offset_left = 38.0
+offset_top = 31.0
+offset_right = 288.0
+offset_bottom = 121.0
+text = "Adcionar Inimigo
+"
+
+[node name="Button" type="Button" parent="Button" unique_id=2034363377]
+layout_mode = 0
+offset_left = 448.0
+offset_top = -2.0
+offset_right = 698.0
+offset_bottom = 88.0
+text = "Iniciar
+"
+
+[node name="Player" parent="." unique_id=51281150 instance=ExtResource("2_tkm3n")]
+position = Vector2(144.00002, 262)
+scale = Vector2(5, 5)
+
+[node name="ButtonPlayer" parent="Player" unique_id=1574036217 instance=ExtResource("3_755g7")]
+offset_left = -28.800001
+offset_top = -52.399998
+offset_right = -28.800001
+offset_bottom = -52.399998
+scale = Vector2(0.19999999, 0.19999999)
+
+[node name="Enemy" parent="." unique_id=609000496 instance=ExtResource("4_5mqmg")]
+position = Vector2(827.00006, 280)
+scale = Vector2(5, 5)

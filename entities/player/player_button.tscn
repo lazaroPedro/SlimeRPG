@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://cil08k2w5rsdj"]
+
+[ext_resource type="Script" uid="uid://dr276rf3w1dt3" path="res://entities/player/player_buttons.gd" id="1_pftc2"]
+
+[node name="Node2D" type="BoxContainer" unique_id=1727230583]
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -1.0
+offset_top = -66.0
+offset_right = -1.0
+offset_bottom = -35.0
+grow_horizontal = 2
+grow_vertical = 0
+alignment = 1
+script = ExtResource("1_pftc2")
+metadata/_edit_use_anchors_ = true
+
+[node name="Attack" type="Button" parent="." unique_id=298793959]
+layout_mode = 2
+text = "Atacar"
+
+[node name="Pass" type="Button" parent="." unique_id=972267507]
+layout_mode = 2
+text = "Passar"
+
+[connection signal="pressed" from="Attack" to="." method="_on_attack_pressed"]
+[connection signal="pressed" from="Pass" to="." method="_on_pass_pressed"]

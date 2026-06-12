@@ -1,0 +1,106 @@
+[gd_scene format=3 uid="uid://cshknhluxep40"]
+
+[ext_resource type="Script" uid="uid://kj3tw16pe7lc" path="res://entities/player/player.gd" id="1_merdl"]
+[ext_resource type="Texture2D" uid="uid://boigj8j2rtnsg" path="res://assets/player_idle.png" id="2_b0kkn"]
+
+[sub_resource type="Theme" id="Theme_b0kkn"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_e4p34"]
+bg_color = Color(0.91021407, 0.4276014, 0.44827807, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rfe5m"]
+bg_color = Color(0.42148513, 0.67761046, 0.346545, 1)
+
+[sub_resource type="Theme" id="Theme_e4p34"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b0kkn"]
+atlas = ExtResource("2_b0kkn")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e4p34"]
+atlas = ExtResource("2_b0kkn")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rfe5m"]
+atlas = ExtResource("2_b0kkn")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qly61"]
+atlas = ExtResource("2_b0kkn")
+region = Rect2(256, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qsoyl"]
+atlas = ExtResource("2_b0kkn")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6nm46"]
+atlas = ExtResource("2_b0kkn")
+region = Rect2(320, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_merdl"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b0kkn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e4p34")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rfe5m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qly61")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qsoyl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6nm46")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[node name="Node2D" type="Node2D" unique_id=51281150]
+script = ExtResource("1_merdl")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=343091382]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -4.5
+offset_right = 30.0
+offset_bottom = -1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ProgressBar" type="ProgressBar" parent="VBoxContainer" unique_id=1714516347]
+layout_mode = 2
+size_flags_vertical = 3
+theme = SubResource("Theme_b0kkn")
+theme_override_font_sizes/font_size = 4
+theme_override_styles/background = SubResource("StyleBoxFlat_e4p34")
+theme_override_styles/fill = SubResource("StyleBoxFlat_rfe5m")
+step = 1.0
+value = 50.0
+rounded = true
+show_percentage = false
+
+[node name="Label" type="Label" parent="VBoxContainer/ProgressBar" unique_id=729430646]
+layout_mode = 0
+offset_left = 10.0
+offset_top = -1.5
+offset_right = 21.0
+offset_bottom = 5.5
+theme = SubResource("Theme_e4p34")
+theme_override_font_sizes/font_size = 3
+text = "25/50"
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="VBoxContainer" unique_id=707848217]
+position = Vector2(20, -10.5)
+sprite_frames = SubResource("SpriteFrames_merdl")
+animation = &"idle"
+autoplay = "idle"
+frame_progress = 0.31794012
