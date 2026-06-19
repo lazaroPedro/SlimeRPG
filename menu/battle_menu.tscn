@@ -1,0 +1,59 @@
+[gd_scene format=3 uid="uid://5yh2d72eygy"]
+
+[ext_resource type="PackedScene" uid="uid://oup5vw8oqcm1" path="res://menu/message_menu.tscn" id="1_40q5m"]
+
+[sub_resource type="Theme" id="Theme_5vsji"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_388a2"]
+bg_color = Color(0.5294118, 0.45882353, 0.07058824, 1)
+
+[sub_resource type="Theme" id="Theme_40q5m"]
+
+[sub_resource type="ButtonGroup" id="ButtonGroup_5vsji"]
+
+[node name="Control" type="Control" unique_id=1279844640]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="." unique_id=854569355]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_5vsji")
+theme_override_styles/panel = SubResource("StyleBoxFlat_388a2")
+
+[node name="MarginContainer" parent="Panel" unique_id=495650581 instance=ExtResource("1_40q5m")]
+layout_mode = 0
+anchors_preset = 0
+
+[node name="GridContainer" type="GridContainer" parent="Panel" unique_id=124166716]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="Atacar" type="Button" parent="Panel/GridContainer" unique_id=403414380]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = SubResource("Theme_40q5m")
+button_group = SubResource("ButtonGroup_5vsji")
+text = "Atacar"
+flat = true
+
+[node name="Atacar2" type="Button" parent="Panel/GridContainer" unique_id=835628991]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = SubResource("Theme_40q5m")
+button_group = SubResource("ButtonGroup_5vsji")
+text = "Atacar"
+flat = true
