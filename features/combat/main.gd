@@ -1,5 +1,5 @@
 extends Node2D
-const Character = preload("res://entities/player_button.tscn")
+
 var turn_manager
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:

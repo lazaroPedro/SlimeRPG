@@ -1,5 +1,5 @@
 extends CharacterModel
-const Buttons = preload("res://entities/player_button.tscn")
+
 func _turn_ready(enemies):
 	$ButtonPlayer.show()
 	var action = await $ButtonPlayer.attack_chosen
@@ -19,4 +19,6 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+	$ProgressBar.value = life
+	$ProgressBar/Label.text = str(life,"/100")
 	pass

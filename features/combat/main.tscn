@@ -27,7 +27,6 @@ text = "Iniciar
 
 [node name="Player" parent="." unique_id=51281150 instance=ExtResource("2_tkm3n")]
 position = Vector2(144.00002, 262)
-scale = Vector2(5, 5)
 
 [node name="ButtonPlayer" parent="Player" unique_id=1574036217 instance=ExtResource("3_755g7")]
 offset_left = -28.800001

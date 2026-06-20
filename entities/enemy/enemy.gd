@@ -12,6 +12,7 @@ func _ready() -> void:
 	type = Type.ENEMY
 	damage = 10
 	life = 10
+	
 	pass # Replace with function body.
 
 

@@ -9,7 +9,23 @@ bg_color = Color(0.5294118, 0.45882353, 0.07058824, 1)
 
 [sub_resource type="Theme" id="Theme_40q5m"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ky8k1"]
+bg_color = Color(0.2, 0.6431373, 0.36862746, 0.9882353)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_x5pl5"]
+bg_color = Color(3.706068e-06, 0.46979213, 0.43189588, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
 [sub_resource type="ButtonGroup" id="ButtonGroup_5vsji"]
+
+[sub_resource type="Theme" id="Theme_aigj5"]
 
 [node name="Control" type="Control" unique_id=1279844640]
 layout_mode = 3
@@ -30,30 +46,92 @@ theme = SubResource("Theme_5vsji")
 theme_override_styles/panel = SubResource("StyleBoxFlat_388a2")
 
 [node name="MarginContainer" parent="Panel" unique_id=495650581 instance=ExtResource("1_40q5m")]
-layout_mode = 0
-anchors_preset = 0
+visible = false
+layout_mode = 1
 
-[node name="GridContainer" type="GridContainer" parent="Panel" unique_id=124166716]
+[node name="MarginContainer2" type="MarginContainer" parent="Panel" unique_id=303418510]
 layout_mode = 1
 anchors_preset = 12
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_top = -116.0
 grow_horizontal = 2
 grow_vertical = 0
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
 
-[node name="Atacar" type="Button" parent="Panel/GridContainer" unique_id=403414380]
+[node name="GridContainer" type="GridContainer" parent="Panel/MarginContainer2" unique_id=124166716]
+layout_mode = 2
+theme_override_constants/h_separation = 16
+theme_override_constants/v_separation = 8
+columns = 2
+
+[node name="Atacar" type="Button" parent="Panel/MarginContainer2/GridContainer" unique_id=403414380]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = SubResource("Theme_40q5m")
+theme_override_styles/normal = SubResource("StyleBoxFlat_ky8k1")
+theme_override_styles/hover = SubResource("StyleBoxFlat_x5pl5")
+toggle_mode = true
+button_group = SubResource("ButtonGroup_5vsji")
+text = "Atacar"
+
+[node name="Atacar2" type="Button" parent="Panel/MarginContainer2/GridContainer" unique_id=835628991]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = SubResource("Theme_aigj5")
+theme_override_styles/normal = SubResource("StyleBoxFlat_ky8k1")
+theme_override_styles/hover = SubResource("StyleBoxFlat_x5pl5")
+toggle_mode = true
+button_group = SubResource("ButtonGroup_5vsji")
+text = "Bloquear"
+
+[node name="Atacar3" type="Button" parent="Panel/MarginContainer2/GridContainer" unique_id=2124485790]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = SubResource("Theme_40q5m")
+theme_override_styles/normal = SubResource("StyleBoxFlat_ky8k1")
+theme_override_styles/hover = SubResource("StyleBoxFlat_x5pl5")
+toggle_mode = true
+button_group = SubResource("ButtonGroup_5vsji")
+text = "Item"
+
+[node name="Atacar4" type="Button" parent="Panel/MarginContainer2/GridContainer" unique_id=2105622375]
 layout_mode = 2
 size_flags_horizontal = 3
 theme = SubResource("Theme_40q5m")
+theme_override_styles/normal = SubResource("StyleBoxFlat_ky8k1")
+theme_override_styles/hover = SubResource("StyleBoxFlat_x5pl5")
+toggle_mode = true
 button_group = SubResource("ButtonGroup_5vsji")
-text = "Atacar"
-flat = true
+text = "Verdade
+"
 
-[node name="Atacar2" type="Button" parent="Panel/GridContainer" unique_id=835628991]
-layout_mode = 2
-size_flags_horizontal = 3
-theme = SubResource("Theme_40q5m")
-button_group = SubResource("ButtonGroup_5vsji")
-text = "Atacar"
-flat = true
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel" unique_id=383138200]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.15100001
+anchor_top = 0.298
+anchor_right = 0.15100001
+anchor_bottom = 0.298
+offset_left = -163.95201
+offset_top = 444.896
+offset_right = 394.04797
+offset_bottom = 444.896
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="Panel" unique_id=1151592913]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.85800004
+anchor_top = 0.347
+anchor_right = 0.85800004
+anchor_bottom = 0.347
+offset_left = -978.416
+offset_top = 413.14398
+offset_right = -420.41602
+offset_bottom = 413.14398
