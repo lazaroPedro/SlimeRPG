@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://dv0m06lk8syv4"]
+
+[ext_resource type="Script" uid="uid://duvwpq2vxul04" path="res://features/combat/map/map_grid.gd" id="1_ui1se"]
+
+[node name="MapGrid" type="Node2D" unique_id=125340577]
+script = ExtResource("1_ui1se")
+
+[node name="Characters" type="Node2D" parent="." unique_id=2087171179]

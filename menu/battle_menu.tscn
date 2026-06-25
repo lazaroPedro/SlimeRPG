@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://5yh2d72eygy"]
 
 [ext_resource type="PackedScene" uid="uid://oup5vw8oqcm1" path="res://menu/message_menu.tscn" id="1_40q5m"]
+[ext_resource type="PackedScene" uid="uid://dv0m06lk8syv4" path="res://features/combat/map/map_grid.tscn" id="2_5vsji"]
 
 [sub_resource type="Theme" id="Theme_5vsji"]
 
@@ -135,3 +136,5 @@ offset_left = -978.416
 offset_top = 413.14398
 offset_right = -420.41602
 offset_bottom = 413.14398
+
+[node name="MapGrid" parent="." unique_id=125340577 instance=ExtResource("2_5vsji")]
