@@ -9,6 +9,12 @@ script = ExtResource("2_5byi3")
 metadata/_custom_type_script = "uid://bacbhp2dwmw2u"
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_5byi3"]
+animations = [{
+"frames": [],
+"loop": 1,
+"name": &"idle",
+"speed": 5.0
+}]
 
 [sub_resource type="Theme" id="Theme_5byi3"]
 
@@ -26,6 +32,7 @@ stats = SubResource("Resource_nij2c")
 
 [node name="Texture" type="AnimatedSprite2D" parent="." unique_id=2073392205]
 sprite_frames = SubResource("SpriteFrames_5byi3")
+animation = &"idle"
 
 [node name="ProgressBar" type="ProgressBar" parent="." unique_id=432805866]
 custom_minimum_size = Vector2(30, 0)
