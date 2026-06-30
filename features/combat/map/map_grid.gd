@@ -1,23 +1,40 @@
 extends Node2D
-
-var grid_layout: Array[Array]
-
-@export var cell_size := 120
+class_name MapGrid
 
 
-
-func _draw() -> void:
-	for y in range(12):
-		for x in range(12):
-			var vector = Vector2(x * cell_size, y * cell_size)
-			draw_rect(Rect2(vector, Vector2(cell_size, cell_size)), Color.WHITE, false)
-	pass
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	queue_redraw()
-	pass # Replace with function body.
+@export var cell_size := 32
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
+
+
+@export var grid_layout := Vector2i(15,9)
+
+
+@export var grid_color: Color = Color.WHITE
+@export var line_width: float = 1.0
+
+func _draw():
+	for x in range(grid_layout.x + 1):
+		var px = x * cell_size
+		draw_line(
+			Vector2(px, 0),
+			Vector2(px, grid_layout.y * cell_size),
+			grid_color,
+			line_width
+		)
+
+
+	for y in range(grid_layout.y + 1):
+		var py = y * cell_size
+		draw_line(
+			Vector2(0, py),
+			Vector2(grid_layout.x * cell_size, py),
+			grid_color,
+			line_width
+		)
+
+
+func _get_abs_position(position: Vector2, size: Vector2):
+	var x = position.x * cell_size 
+	var y = position.y * cell_size 
+	return Vector2(x,y)

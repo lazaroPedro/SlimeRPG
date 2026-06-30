@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://dgp2nj6vmmpd2"]
+
+[ext_resource type="Script" uid="uid://oxc5v5008dvb" path="res://entities/character/character.gd" id="1_njh41"]
+[ext_resource type="Script" uid="uid://bacbhp2dwmw2u" path="res://entities/character/CharacterStats.cs" id="2_5byi3"]
+
+[sub_resource type="Resource" id="Resource_nij2c"]
+resource_local_to_scene = true
+script = ExtResource("2_5byi3")
+metadata/_custom_type_script = "uid://bacbhp2dwmw2u"
+
+[node name="Character" type="Node2D" unique_id=212888251]
+script = ExtResource("1_njh41")
+stats = SubResource("Resource_nij2c")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2073392205]

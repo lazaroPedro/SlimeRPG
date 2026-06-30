@@ -1,12 +1,17 @@
-extends Node
-class_name CharacterModel
+extends Node2D
+class_name Character
 
 
 enum Type { ENEMY, PLAYER }
+var texture
 var player_name
 var life
 var type
 var damage
+var grid_position
+
+@export
+var stats: CharacterStats
 
 func _turn_ready(enemies):
 	pass
