@@ -1,7 +1,13 @@
 extends Node2D
 class_name TurnManager
 var index = 0
-var list_characters = get_children()
+var list_characters = []
+
+func _ready() -> void:
+	var rot = get_parent()
+	list_characters = get_children()
+	print(list_characters)
+	$Character.position = rot._get_abs_position($Character.grid_position)
 
 func _register(character):
 	list_characters.append(character)

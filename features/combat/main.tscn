@@ -1,11 +1,12 @@
 [gd_scene format=4 uid="uid://d1r0f3blgicbx"]
 
 [ext_resource type="Script" uid="uid://dig4lb8goc8ft" path="res://features/combat/main.gd" id="1_owsrs"]
-[ext_resource type="PackedScene" uid="uid://cshknhluxep40" path="res://entities/player/player.tscn" id="2_tkm3n"]
 [ext_resource type="PackedScene" uid="uid://cil08k2w5rsdj" path="res://entities/player/player_button.tscn" id="3_755g7"]
-[ext_resource type="PackedScene" uid="uid://b0kfmy27wgpla" path="res://entities/enemy/enemy.tscn" id="4_5mqmg"]
+[ext_resource type="Script" uid="uid://c4c0owi2qeqj6" path="res://features/turn/turn_manager.gd" id="4_yacov"]
 [ext_resource type="Texture2D" uid="uid://dd80vobyxra16" path="res://assets/MapTileSet.png" id="5_tkm3n"]
 [ext_resource type="PackedScene" uid="uid://dv0m06lk8syv4" path="res://features/combat/map/map_grid.tscn" id="6_755g7"]
+[ext_resource type="PackedScene" uid="uid://dgp2nj6vmmpd2" path="res://entities/character/Character.tscn" id="8_t86hy"]
+[ext_resource type="Script" uid="uid://bacbhp2dwmw2u" path="res://entities/character/CharacterStats.cs" id="9_u5krq"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_tkm3n"]
 texture = ExtResource("5_tkm3n")
@@ -79,6 +80,11 @@ texture_region_size = Vector2i(32, 32)
 tile_size = Vector2i(32, 32)
 sources/0 = SubResource("TileSetAtlasSource_tkm3n")
 
+[sub_resource type="Resource" id="Resource_5mqmg"]
+resource_local_to_scene = true
+script = ExtResource("9_u5krq")
+metadata/_custom_type_script = "uid://bacbhp2dwmw2u"
+
 [node name="Node2D" type="Node2D" unique_id=796590410]
 script = ExtResource("1_owsrs")
 
@@ -89,19 +95,17 @@ rendering_quadrant_size = 32
 collision_enabled = false
 physics_quadrant_size = 32
 
-[node name="Player" parent="." unique_id=51281150 instance=ExtResource("2_tkm3n")]
-position = Vector2(237, 825)
-
-[node name="ButtonPlayer" parent="Player" unique_id=1574036217 instance=ExtResource("3_755g7")]
-offset_left = -28.800001
-offset_top = -52.399998
-offset_right = -28.800001
-offset_bottom = -52.399998
-scale = Vector2(0.19999999, 0.19999999)
-
-[node name="Enemy" parent="." unique_id=609000496 instance=ExtResource("4_5mqmg")]
-position = Vector2(866.00006, 781)
-scale = Vector2(5, 5)
-
 [node name="MapGrid" parent="." unique_id=125340577 instance=ExtResource("6_755g7")]
-position = Vector2(237, 825)
+
+[node name="Node2D" type="Node2D" parent="MapGrid" unique_id=20535985]
+script = ExtResource("4_yacov")
+
+[node name="Character" parent="MapGrid/Node2D" unique_id=212888251 instance=ExtResource("8_t86hy")]
+stats = SubResource("Resource_5mqmg")
+
+[node name="ButtonPlayer" parent="MapGrid/Node2D" unique_id=1574036217 instance=ExtResource("3_755g7")]
+offset_left = -89.8
+offset_top = -83.399994
+offset_right = 32.199997
+offset_bottom = -52.399994
+scale = Vector2(0.19999999, 0.19999999)

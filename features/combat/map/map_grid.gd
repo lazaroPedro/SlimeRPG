@@ -31,13 +31,14 @@ func _draw():
 			grid_color,
 			line_width
 		)
-func _get_abs_position(position: Vector2):
-	var x = position.x * cell_size 
-	var y = position.y * cell_size 
+func _get_abs_position(_position: Vector2):
+	var x = _position.x * cell_size 
+	var y = _position.y * cell_size 
 	return Vector2(x,y)
 
 
 func _ready() -> void:
-	$ActivePathfinder._active_pathfinder([Vector2(2,4), Vector2(4,4)])
+	queue_redraw()
+	$ActivePathfinder._active_pathfinder([Vector2(2,4), Vector2(4,4)], [Vector2(3,4)])
 
 	
