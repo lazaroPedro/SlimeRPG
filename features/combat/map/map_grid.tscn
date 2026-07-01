@@ -1,26 +1,10 @@
 [gd_scene format=3 uid="uid://dv0m06lk8syv4"]
 
 [ext_resource type="Script" uid="uid://duvwpq2vxul04" path="res://features/combat/map/map_grid.gd" id="1_ui1se"]
-[ext_resource type="Texture2D" uid="uid://c35e7deya71y2" path="res://icon.svg" id="2_egn64"]
-[ext_resource type="Script" uid="uid://dg3lqnbr7qmu1" path="res://features/combat/map/texture_rect.gd" id="3_3ayro"]
 [ext_resource type="Script" uid="uid://bxjqwcfkrcv2j" path="res://features/combat/map/active_pathfinder.gd" id="5_lscdi"]
 
 [node name="MapGrid" type="Node2D" unique_id=125340577]
 script = ExtResource("1_ui1se")
-
-[node name="TextureRect" type="TextureRect" parent="." unique_id=117572475]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_right = 30.0
-offset_bottom = 30.0
-grow_horizontal = 2
-grow_vertical = 2
-size_flags_horizontal = 4
-size_flags_vertical = 0
-texture = ExtResource("2_egn64")
-expand_mode = 1
-script = ExtResource("3_3ayro")
 
 [node name="ActivePathfinder" type="Node2D" parent="." unique_id=919373139]
 script = ExtResource("5_lscdi")
