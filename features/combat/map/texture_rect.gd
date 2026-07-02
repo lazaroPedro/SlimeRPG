@@ -1,13 +1,12 @@
-extends Character
+extends TextureRect
 
+var map = MapGrid.new()
 
 
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	type = Type.ENEMY
-	
-	
+	position = map._get_abs_position(Vector2(3,4))
 	pass # Replace with function body.
 
 
